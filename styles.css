@@ -1,3 +1,20 @@
+@media (max-width: 700px) {
+    /* ...existing responsive styles... */
+    .jharkhand-nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        row-gap: 0.5em;
+        column-gap: 0.7em;
+        padding-bottom: 0.5em;
+    }
+    .jharkhand-nav li {
+        flex: 1 1 120px;
+        min-width: 110px;
+        text-align: center;
+        padding: 0.5em 0.2em;
+        margin-bottom: 0.2em;
+    }
+}
 /* Responsive Design for Mobile Devices */
 @media (max-width: 700px) {
     .jharkhand-content {
