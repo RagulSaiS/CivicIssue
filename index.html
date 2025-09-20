@@ -21,82 +21,184 @@
             <ul>
                 <li class="active"><a href="#" tabindex="0">Home</a></li>
                 <li><a href="#report" tabindex="0">Report Issue</a></li>
-                <li><a href="#dashboard" tabindex="0">Dashboard</a></li>
+                <li><a href="#myrequests" tabindex="0">My Requests</a></li>
                 <li><a href="#analytics" tabindex="0">Analytics</a></li>
-                <li><a href="#help" tabindex="0">Help</a></li>
+                <li><a href="#contact" tabindex="0">Contact Us</a></li>
             </ul>
         </nav>
     </header>
     <main class="jharkhand-content">
-        <h1 class="jharkhand-title">Empowering Citizens for a Cleaner, Greener City</h1>
-        <section id="report" class="citizen-section card-section">
-            <div class="section-header">Report a Civic Issue</div>
-            <form class="report-form" autocomplete="off">
-                <div class="form-row">
-                    <label for="issue-photo">Photo:</label>
-                    <input type="file" id="issue-photo" accept="image/*">
-                </div>
-                <div class="form-row">
-                    <label for="issue-location">Location:</label>
-                    <input type="text" id="issue-location" placeholder="Enter location or use GPS">
-                </div>
-                <div class="form-row">
-                    <label for="issue-desc">Description:</label>
-                    <textarea id="issue-desc" placeholder="Describe the issue..." maxlength="250"></textarea>
-                </div>
-                <div class="form-row">
-                    <label for="issue-type">Category:</label>
-                    <select id="issue-type">
-                        <option>Pothole</option>
-                        <option>Streetlight</option>
-                        <option>Garbage</option>
-                        <option>Water Leakage</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <button type="submit" class="go-back">Submit Report</button>
-            </form>
-        </section>
-        <section id="map" class="map-section card-section">
-            <div class="section-header">Live Map of Reported Issues</div>
-            <div class="map-placeholder" aria-label="Map of reported civic issues">[Map Placeholder]</div>
-        </section>
-        <section id="dashboard" class="admin-section card-section">
-            <div class="section-header">Admin Dashboard (Prototype)</div>
-            <div class="admin-controls">
-                <input type="text" placeholder="Filter by location/category" aria-label="Filter reports">
-                <button class="go-back">Filter</button>
+        <!-- Contact Us Section (hidden by default) -->
+        <section class="card-section" id="contact-section" style="display:none;">
+            <div class="section-header">Contact Us & Feedback</div>
+            <div style="margin-bottom:1.5em;">
+                <strong>We value your feedback!</strong> Please use the form below to send us your suggestions, questions, or report any issues with the portal.
             </div>
+            <form class="report-form" style="max-width:500px; margin:0 auto 2em auto;">
+                <div class="form-row">
+                    <label for="feedback-name">Your Name</label>
+                    <input type="text" id="feedback-name" name="feedback-name" required>
+                </div>
+                <div class="form-row">
+                    <label for="feedback-email">Your Email</label>
+                    <input type="email" id="feedback-email" name="feedback-email" required>
+                </div>
+                <div class="form-row">
+                    <label for="feedback-message">Message / Feedback</label>
+                    <textarea id="feedback-message" name="feedback-message" required></textarea>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="go-back report-btn">Send Feedback</button>
+                </div>
+            </form>
+            <div style="background:#e8f5e9; border:1.5px solid #009966; border-radius:6px; padding:1em; max-width:500px; margin:0 auto;">
+                <div style="font-weight:500; color:#009966; margin-bottom:0.5em;">Contact Information</div>
+                <div>Email: <a href="mailto:contact@jharkhand.gov.in">contact@jharkhand.gov.in</a></div>
+                <div>Phone: <a href="tel:+919876543210">+91 98765 43210</a></div>
+                <div>Department of Higher and Technical Education, Government of Jharkhand</div>
+            </div>
+        </section>
+        <h1 class="jharkhand-title" id="home-title">Welcome to the Civic Issue Reporting & Resolution System</h1>
+        <section class="welcome-section card-section" id="welcome-section">
+            <p>
+                Welcome to Civic Issue Reporting System — a smarter way to build better cities.
+We believe every pothole fixed, every streetlight restored, and every clean street makes a difference. This platform empowers you to report everyday civic issues in real time, track their progress, and work together with local authorities to create cleaner, greener, and more responsive communities. Let’s make our cities thrive — one report at a time!
+            </p>
+        </section>
+        <div class="arrow-container" id="arrow-container">
+            <div class="down-arrow"></div>
+        </div>
+        <div class="center-btn" id="center-btn">
+            <button class="go-back report-btn" id="report-btn">Report an Issue</button>
+        </div>
+        <section class="dashboard-section card-section" id="dashboard-section">
+            <div class="section-header">Civic Issue Dashboard</div>
+            <div class="dashboard-charts">
+                <div class="chart-card">
+                    <div class="chart-title">Issues Reported vs Resolved Over Time</div>
+                    <img src="resources/IssuesReportedVsResolved.png" alt="Issues Reported vs Resolved Over Time" style="max-width: 100%; height: 220px; object-fit: contain;" />
+                </div>
+                <div class="chart-card">
+                    <div class="chart-title">Category-wise: Reported vs Resolved</div>
+                    <img src="resources/CategorywiseIssues.png" alt="Category-wise: Reported vs Resolved" style="max-width: 100%; height: 220px; object-fit: contain;" />
+                </div>
+            </div>
+        </section>
+        <!-- My Requests Section (hidden by default) -->
+        <section class="card-section" id="myrequests-section" style="display:none;">
+            <div class="section-header">My Reported Issues</div>
+            <div style="overflow-x:auto;">
             <table class="admin-table">
                 <thead>
                     <tr>
-                        <th>Photo</th>
-                        <th>Location</th>
-                        <th>Description</th>
+                        <th>Tracking #</th>
+                        <th>Reported Date</th>
                         <th>Category</th>
+                        <th>Issue Summary</th>
                         <th>Status</th>
-                        <th>Assign</th>
+                        <th>Resolved Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>[img]</td>
-                        <td>Anna Nagar</td>
-                        <td>Pothole near bus stop</td>
-                        <td>Pothole</td>
-                        <td>New</td>
-                        <td><button class="go-back">Assign</button></td>
+                        <td>CI20250901-001</td>
+                        <td>2025-09-01</td>
+                        <td>Roads</td>
+                        <td>Pothole near Main Street crossing</td>
+                        <td>Resolved</td>
+                        <td>2025-09-05</td>
                     </tr>
                     <tr>
-                        <td>[img]</td>
-                        <td>MG Road</td>
-                        <td>Streetlight not working</td>
-                        <td>Streetlight</td>
+                        <td>CI20250910-002</td>
+                        <td>2025-09-10</td>
+                        <td>Sanitation</td>
+                        <td>Overflowing garbage bin at Park Ave</td>
+                        <td>Open</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>CI20250915-003</td>
+                        <td>2025-09-15</td>
+                        <td>Streetlights</td>
+                        <td>Streetlight not working near Block B</td>
                         <td>In Progress</td>
-                        <td><button class="go-back">Assign</button></td>
+                        <td>-</td>
                     </tr>
                 </tbody>
             </table>
+            </div>
+        </section>
+        <!-- Analytics Section (hidden by default) -->
+        <section class="card-section" id="analytics-section" style="display:none;">
+            <div class="section-header">Analytics (Admin Only)</div>
+            <div style="color: #b71c1c; background: #fff3e0; border: 1.5px solid #ff9800; border-radius: 6px; padding: 1em; margin-bottom: 1.5em; text-align: center; font-weight: 500;">This page is for admin users only. Unauthorized access is prohibited.</div>
+            <div class="dashboard-charts">
+                <div class="chart-card">
+                    <div class="chart-title">Issues Reported vs Resolved Over Time</div>
+                    <img src="resources/IssuesReportedVsResolved.png" alt="Issues Reported vs Resolved Over Time" style="max-width: 100%; height: 220px; object-fit: contain;" />
+                </div>
+                <div class="chart-card">
+                    <div class="chart-title">Category-wise: Reported vs Resolved</div>
+                    <img src="resources/CategorywiseIssues.png" alt="Category-wise: Reported vs Resolved" style="max-width: 100%; height: 220px; object-fit: contain;" />
+                </div>
+            </div>
+            <div class="section-header" style="margin-top:2em;">All Reported Issues</div>
+            <div style="overflow-x:auto;">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Tracking #</th>
+                        <th>Reported Date</th>
+                        <th>Category</th>
+                        <th>Issue Summary</th>
+                        <th>Status</th>
+                        <th>Resolved Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>CI20250901-001</td><td>2025-09-01</td><td>Roads</td><td>Pothole near Main Street crossing</td><td>Resolved</td><td>2025-09-05</td></tr>
+                    <tr><td>CI20250910-002</td><td>2025-09-10</td><td>Sanitation</td><td>Overflowing garbage bin at Park Ave</td><td>Open</td><td>-</td></tr>
+                    <tr><td>CI20250915-003</td><td>2025-09-15</td><td>Streetlights</td><td>Streetlight not working near Block B</td><td>In Progress</td><td>-</td></tr>
+                    <tr><td>CI20250825-004</td><td>2025-08-25</td><td>Water Supply</td><td>Low water pressure in Sector 7</td><td>Resolved</td><td>2025-08-28</td></tr>
+                    <tr><td>CI20250830-005</td><td>2025-08-30</td><td>Roads</td><td>Broken speed breaker at School Road</td><td>Open</td><td>-</td></tr>
+                    <tr><td>CI20250905-006</td><td>2025-09-05</td><td>Sanitation</td><td>Blocked drain near Market Area</td><td>Resolved</td><td>2025-09-08</td></tr>
+                    <tr><td>CI20250912-007</td><td>2025-09-12</td><td>Streetlights</td><td>Flickering light at Lake View</td><td>In Progress</td><td>-</td></tr>
+                    <tr><td>CI20250914-008</td><td>2025-09-14</td><td>Other</td><td>Illegal dumping behind Mall</td><td>Open</td><td>-</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+        <!-- Report Issue Section (hidden by default) -->
+        <section class="card-section" id="report-section" style="display:none;">
+            <div class="section-header">Report a Civic Issue</div>
+            <form class="report-form">
+                <div class="form-row">
+                    <label for="issue-title">Issue Title</label>
+                    <input type="text" id="issue-title" name="issue-title" required>
+                </div>
+                <div class="form-row">
+                    <label for="issue-category">Category</label>
+                    <select id="issue-category" name="issue-category" required>
+                        <option value="">Select Category</option>
+                        <option value="Roads">Roads</option>
+                        <option value="Sanitation">Sanitation</option>
+                        <option value="Water Supply">Water Supply</option>
+                        <option value="Streetlights">Streetlights</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="issue-desc">Description</label>
+                    <textarea id="issue-desc" name="issue-desc" required></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="issue-location">Location</label>
+                    <input type="text" id="issue-location" name="issue-location" required>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="go-back report-btn">Submit Issue</button>
+                </div>
+            </form>
         </section>
     </main>
     <script src="script.js"></script>
