@@ -1,3 +1,96 @@
+/* Responsive Design for Mobile Devices */
+@media (max-width: 700px) {
+    .jharkhand-content {
+        padding: 1em 0.3em 2em 0.3em;
+        margin: 1em 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .jharkhand-header {
+        padding: 0.7em 0.5em 0.5em 0.5em;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .jharkhand-logo-section {
+        flex-direction: row;
+        gap: 0.5em;
+        justify-content: flex-start;
+    }
+    .jharkhand-logo {
+        width: 44px;
+        height: 44px;
+    }
+    .jharkhand-header h2 {
+        font-size: 1.1em;
+    }
+    .jharkhand-header h3 {
+        font-size: 0.95em;
+    }
+    .jharkhand-nav ul {
+        gap: 0.7em;
+        font-size: 0.98em;
+        flex-wrap: wrap;
+    }
+    .jharkhand-title {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+    .card-section {
+        padding: 1em 0.5em 1em 0.5em;
+        margin-bottom: 1em;
+    }
+    .dashboard-charts {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .chart-card {
+        min-width: 0;
+        max-width: 100%;
+        padding: 1em 0.5em 0.7em 0.5em;
+    }
+    .chart-title {
+        font-size: 1em;
+    }
+    .center-btn {
+        margin-bottom: 1em;
+    }
+    .report-btn, .go-back {
+        font-size: 1em;
+        padding: 0.7em 1.2em;
+    }
+    .report-form {
+        max-width: 100%;
+        padding: 0;
+    }
+    .admin-table, .admin-table th, .admin-table td {
+        font-size: 0.95em;
+        padding: 0.5em 0.3em;
+    }
+    .admin-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .admin-table thead, .admin-table tbody, .admin-table tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+    .admin-table th, .admin-table td {
+        word-break: break-word;
+    }
+    .arrow-container {
+        height: 30px;
+    }
+    .down-arrow {
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 22px solid #009966;
+    }
+}
 .welcome-section {
     font-size: 1.15em;
     text-align: center;
