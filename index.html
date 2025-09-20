@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Learning Workspace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Jharkhand Government Department Theme Clone -->
+    <header class="jharkhand-header">
+        <div class="jharkhand-logo-section">
+            <img src="Jharkhand Logo.png" alt="Jharkhand Logo" class="jharkhand-logo">
+            <div>
+                <h2>GOVERNMENT OF JHARKHAND</h2>
+                <h3>Department of Higher and Technical Education</h3>
+                <span style="font-size:0.95em;color:#009966;">Crowdsourced Civic Issue Reporting & Resolution System</span>
+            </div>
+        </div>
+        <nav class="jharkhand-nav" aria-label="Main Navigation">
+            <ul>
+                <li class="active"><a href="#" tabindex="0">Home</a></li>
+                <li><a href="#report" tabindex="0">Report Issue</a></li>
+                <li><a href="#dashboard" tabindex="0">Dashboard</a></li>
+                <li><a href="#analytics" tabindex="0">Analytics</a></li>
+                <li><a href="#help" tabindex="0">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="jharkhand-content">
+        <h1 class="jharkhand-title">Empowering Citizens for a Cleaner, Greener City</h1>
+        <section id="report" class="citizen-section card-section">
+            <div class="section-header">Report a Civic Issue</div>
+            <form class="report-form" autocomplete="off">
+                <div class="form-row">
+                    <label for="issue-photo">Photo:</label>
+                    <input type="file" id="issue-photo" accept="image/*">
+                </div>
+                <div class="form-row">
+                    <label for="issue-location">Location:</label>
+                    <input type="text" id="issue-location" placeholder="Enter location or use GPS">
+                </div>
+                <div class="form-row">
+                    <label for="issue-desc">Description:</label>
+                    <textarea id="issue-desc" placeholder="Describe the issue..." maxlength="250"></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="issue-type">Category:</label>
+                    <select id="issue-type">
+                        <option>Pothole</option>
+                        <option>Streetlight</option>
+                        <option>Garbage</option>
+                        <option>Water Leakage</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="go-back">Submit Report</button>
+            </form>
+        </section>
+        <section id="map" class="map-section card-section">
+            <div class="section-header">Live Map of Reported Issues</div>
+            <div class="map-placeholder" aria-label="Map of reported civic issues">[Map Placeholder]</div>
+        </section>
+        <section id="dashboard" class="admin-section card-section">
+            <div class="section-header">Admin Dashboard (Prototype)</div>
+            <div class="admin-controls">
+                <input type="text" placeholder="Filter by location/category" aria-label="Filter reports">
+                <button class="go-back">Filter</button>
+            </div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Assign</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[img]</td>
+                        <td>Anna Nagar</td>
+                        <td>Pothole near bus stop</td>
+                        <td>Pothole</td>
+                        <td>New</td>
+                        <td><button class="go-back">Assign</button></td>
+                    </tr>
+                    <tr>
+                        <td>[img]</td>
+                        <td>MG Road</td>
+                        <td>Streetlight not working</td>
+                        <td>Streetlight</td>
+                        <td>In Progress</td>
+                        <td><button class="go-back">Assign</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

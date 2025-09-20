@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Open with Live Server",
+			"type": "shell",
+			"command": "echo To preview your HTML, right-click index.html and select 'Open with Live Server' in VS Code.",
+			"group": "build"
+		}
+	]
+}

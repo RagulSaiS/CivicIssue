@@ -1,0 +1,1 @@
+(Placeholder) Add your images and assets here for your HTML projects.
